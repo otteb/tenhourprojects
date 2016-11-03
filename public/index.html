@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" ng-app="pproject">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <!--These will be the custom styles-->
+    <link rel="stylesheet" href="./styles/stylesheet.css">
+    <title>10 Hour Projects</title>
+</head>
+<body>
+
+    <main>
+index.html is working
+<br>
+<br>
+<a ui-sref="home">HOME</a>
+<a ui-sref="about">ABOUT</a>
+<a ui-sref="projects">PROJECTS</a>
+<a ui-sref="companies">COMPANIES</a>
+<a ui-sref="users">USERS</a>
+
+
+
+    </main>
+
+    <ui-view></ui-view>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/mainService.js"></script>
+    <script src="./js/homeCtrl.js"></script>
+    <script src="./js/aboutCtrl.js"></script>
+    <script src="./js/projectsCtrl.js"></script>
+    <script src="./js/companiesCtrl.js"></script>
+    <script src="./js/usersCtrl.js"></script>
+    <script src="./js/userProfileCtrl.js"></script>
+
+</body>
+</html>
