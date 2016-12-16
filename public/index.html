@@ -4,38 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./styles/reset.css">
+    <!-- this is the CDN for materializecss -->
+     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.css"> -->
     <!--These will be the custom styles-->
     <link rel="stylesheet" href="./styles/stylesheet.css">
+
+    <!-- custom css files -->
+    <link rel="stylesheet" href="./styles/companies.css">
+    <link rel="stylesheet" href="./styles/comp_proj.css">
+    <link rel="stylesheet" href="./styles/users.css">
+    <link rel="stylesheet" href="./styles/profile.css">
+    <link rel="stylesheet" href="./styles/projects.css">
+    <link rel="stylesheet" href="./styles/about.css">
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="./styles/new_user.css">
+    <link rel="stylesheet" href="./styles/new_comp.css">
+
     <title>10 Hour Projects</title>
 </head>
-<body>
 
-    <main>
-index.html is working
-<br>
-<br>
-<a ui-sref="home">HOME</a>
-<a ui-sref="about">ABOUT</a>
-<a ui-sref="projects">PROJECTS</a>
-<a ui-sref="companies">COMPANIES</a>
-<a ui-sref="users">USERS</a>
 
+
+<body class="index-main" ng-controller="mainCtrl">
+<div class="current-user-info" >
+  <h1 class="comp-logo">10 HOURPROJECTS</h1>
+  <div class="popup-user" ng-if="loggedInUser">
+    <img class="logged-img" ng-src="{{loggedInUser.profilepicurl}}">
+    <p class="log-name">Welcome {{loggedInUser.firstname}}</p>
+  </div>
+</div>
+
+<main>
+
+<div class="navigation">
+
+  <a ui-sref="home">HOME</a>
+  <a ui-sref="about">ABOUT</a>
+  <a ui-sref="projects">PROJECTS</a>
+  <a ui-sref="companies">COMPANIES</a>
+  <a ui-sref="users">USERS</a>
+  <a ng-click="logOut()" onclick="history.go(0)" value="Refresh">Log Out</a>
+</div>
 
 
     </main>
 
     <ui-view></ui-view>
 
+    <!-- javascript cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.js"></script> -->
+
+    <!-- custom javascript files -->
     <script src="./js/app.js"></script>
     <script src="./js/mainService.js"></script>
+    <script src="./js/apiService.js"></script>
+    <!-- controllers -->
     <script src="./js/homeCtrl.js"></script>
     <script src="./js/aboutCtrl.js"></script>
     <script src="./js/projectsCtrl.js"></script>
     <script src="./js/companiesCtrl.js"></script>
     <script src="./js/usersCtrl.js"></script>
     <script src="./js/userProfileCtrl.js"></script>
+    <script src="./js/companyProjectsCtrl.js"></script>
+    <script src="./js/newUserCtrl.js"></script>
+    <script src="./js/newCompanyCtrl.js"></script>
+    <script src="./js/mainCtrl.js"></script>
+    <script src="./js/pointsCtrl.js"></script>
+    <!-- directives -->
+    <script src="./js/directives/nav_bar.js"></script>
+
 
 </body>
 </html>

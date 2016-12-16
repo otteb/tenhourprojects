@@ -1,0 +1,37 @@
+.users-body{
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  background-color: pink;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.users-header{
+  width: 60vw;
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+.user-profile {
+  width: 60vw;
+  height: auto;
+  position: relative;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  background-color: white;
+  border-radius: 10px;
+}
+.users-profile-image {
+  width: 80px;
+  height: auto;
+  margin-left: 2px;
+  margin-top: 3px;
+  border-radius: 10px
+}
+
+.users-username{
+  position: absolute;
+  top: 20px;
+  margin-left: 10px;
+}

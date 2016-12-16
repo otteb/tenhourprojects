@@ -1,9 +1,47 @@
-<div ng-repeat="project in found">
+<div class="profile-body">
 
 
-{{project.firstname}}
+  <div class="profile-info">
+    <img class="profile-img" ng-src="{{userPresent.profilepicurl}}"/>
+    <h3 class="user-name">{{userPresent.firstname}} {{userPresent.lastname}}</h3>
+    <a class="contact" ng-click="show=!show">contact {{userPresent.username}}</a>
+    <div class="contact-information" ng-hide="!show">
+      <p class="profile-email">Email: {{userPresent.email}}</p>
+      <a class="profile-info-show-less" ng-click="show=!show">show less</a>
+    </div>
+  </div>
+
+
 </br>
 </br>
-{{project.lastname}}
+</br>
+
+<form ng-submit="postCom(com)" ng-if="loggedInUser.companyid">
+  <h2>write a new commendation</h2>
+  <input type="text" ng-model="com.commendationtext" placeholder="Commendation">
+  <select ng-options="project.projectid as project.projectname for project in projects" ng-model="com.projectid">
+    <option value="">Select the Project</option>
+  </select>
+  <button type="button" name="button" ng-click="postCom(com)">Post Commendation</button>
+
+</form>
+
+</br>
+
+<a ui-sref="users" ng-if="currentUser == loggedInUser.userid"><button type="button" name="button" ng-click="deleteCurrentUser({currentUser})" ng-sref="users">Delete Profile</button></a>
+
+<div class="com-profile" ng-repeat="com in commendations">
+  <img class="com-badge" ng-src="{{com.badge_imageurl}}" height="50px" width="50px"/>
+  <h3 class="com-category">{{com.category}}</h3>
+  <h3 class="com-proj-name">Project: {{com.projectname}}</h3>
+  <a class="com-show-more" ng-click="show=!show">show more</a>
+  <div ng-hide="!show">
+    <h3 class="com-proj-comp">Company: {{com.companyname}}</h3>
+    <p class="com-desc">Project Description: {{com.description}}</p>
+    <p class="com-comtext">Company Commendation: {{com.commendationtext}}</p>
+  <a class="com-show-less" ng-click="show=!show">show less</a>
+  <div>
+
+</div>
 
 </div>

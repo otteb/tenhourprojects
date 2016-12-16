@@ -1,0 +1,44 @@
+.projects-body{
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+  background-color: blue;
+  /*background-image: url('../img/skyscrapers.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.proj-header{
+  width: 60vw;
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+.find-proj{
+  display: inline-block;
+}
+.projects-profile{
+  width: 60vw;
+  height: auto;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.proj-cont{
+  display: inline-block;
+}
+/*.proj-cat{
+
+}
+.proj-name{
+
+}
+.proj-desc{
+
+}*/

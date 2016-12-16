@@ -1,4 +1,4 @@
-var app = require('./index.js');
+var app = require('../index.js');
 var db = app.get('db');
 
 module.exports = {
@@ -12,29 +12,37 @@ readUsers: function(request, response, next)
 
 readUser: function(req, res, next)
 {
-  db.read_user([req.query.id], function(err, user){
+  // console.log("this is the readUser endpoint",req.params.userid);
+  db.read_user([req.params.userid], function(err, user){
     res.status(200).json(user);
   });
 },
 
-postUser: function(req, res, next)
-{
-  db.post_user([req.body.firstname, req.body.lastname, req.body.address, req.body.city, req.body.state, req.body.country, req.body.postalcode, req.body.phone, req.body.fax, req.body.email, req.body.skypeid, req.body.password, req.body.username, req.body.profilepicurl],
-    function(err, user){
-      res.status(200).json(user);
-  });
-},
+// postUser: function(req, res, next)
+// {
+//   console.log(req.body);
+//   db.post_user([req.body.firstname, req.body.lastname, req.body.phone, req.body.email, req.body.skypeid, req.body.password, req.body.username, req.body.profilepicurl],
+//     function(err, user){
+//       if (err) {
+//         res.status(500).json(err);
+//       }
+//       else {
+//         res.status(200).json(user);
+//       }
+//   });
+// },
 
 deleteUser: function(req,res,next)
 {
-  db.delete_user([req.query.id], function(err, user){
+
+  db.delete_user([req.params.userid], function(err, user){
     res.status(200).json(user);
   })
 },
 
 updateUser: function(req,res,next)
 {
-  db.update_user([req.body.firstname, req.body.lastname, req.body.address, req.body.city, req.body.state, req.body.country, req.body.postalcode, req.body.phone, req.body.fax, req.body.email, req.body.skypeid, req.body.password, req.body.username, req.body.profilepicurl, req.query.id], function(err, user){
+  db.update_user([req.body.firstname, req.body.lastname, req.body.phone, req.body.email, req.body.skypeid, req.body.password, req.body.username, req.body.profilepicurl, req.query.id], function(err, user){
     res.status(200).json(user);
   });
 },
@@ -48,9 +56,14 @@ readProjects: function(request, response, next)
 
 postProject: function(request, response, next)
 {
-  db.post_project([request.body.companyId, request.body.description, request.body.category, request.body.categoryId, request.body.badge_description, request.body.projectName],
+  db.post_project([request.body.companyid, request.body.description, request.body.category, request.body.categoryid, request.body.badge_description, request.body.projectname],
     function(err, project){
+      if(err){
+
+      }
+      else{
     response.status(200).json(project);
+  }
   });
 },
 
@@ -63,9 +76,7 @@ deleteProject: function(req,res,next)
 
 updateProject: function(req,res,next)
 {
-  // console.log(req.body, req.query.id);
   db.update_project([req.body.companyid, req.body.description, req.body.category, req.body.categoryid, req.body.badge_description, req.body.projectname, req.query.id], function(err, project){
-      console.log(project);
       res.status(200).json(project);
   })
 },
@@ -77,16 +88,25 @@ readCompanies: function(request, response, next)
   });
 },
 
-postCompany: function(req, res, next)
+readCompanyProjects: function(req,res,next)
 {
-  db.post_company([req.body.companyname, req.body.contactfirstname, req.body.contactlastname, req.body.contactemail, req.body.contactphone, req.body.contactskypeid, req.body.password, req.body.username, req.body.profilepicurl], function(err, company){
-    res.status(200).json(company);
-  });
+
+  db.read_company_projects([req.params.companyid], function(err, projects){
+    res.status(200).json(projects);
+  })
+},
+
+getCompanyProjects: function(req,res,next){
+  // console.log(req.user.companyid);
+  db.project_by_company([req.user.companyid], function(err, projects){
+    // console.log(projects, err);
+    res.status(200).json(projects);
+  })
 },
 
 deleteCompany: function(req, res, next)
 {
-  db.delete_company([req.query.id], function(err, company){
+  db.delete_company([req.params.companyid], function(err, company){
     res.status(200).json(company)
   });
 },
@@ -98,9 +118,16 @@ updateCompany: function(req, res, next)
   });
 },
 
+deactivateCompany: function(req, res, next){
+  db.update_company_activity([req.params.companyid], function(err, company){
+    res.status(200).json(company);
+  })
+},
+
 readCommendations: function(req, res, next)
 {
-  // console.log(req.query.id);
+  //
+// console.log("LLLLLLLL" +req.params.userid);
   db.read_commendations([req.params.userid], function(err, commendations){
     res.status(200).json(commendations);
   })
@@ -108,7 +135,9 @@ readCommendations: function(req, res, next)
 
 postCommendation: function(req, res, next)
 {
-  db.post_commendation([req.body.userid, req.body.companyid, req.body.commendationtext, req.body.projectid], function(err, commendation){
+  // console.log(req.body);
+  db.post_commendation([req.body.userid * 1, req.user.companyid, req.body.commendationtext, req.body.projectid * 1], function(err, commendation){
+    // console.log(err);
     res.status(200).json(commendation);
   })
 }

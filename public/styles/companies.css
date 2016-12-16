@@ -1,0 +1,66 @@
+.company-wrapper{
+  background-color: blue;
+}
+
+.companies-body{
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+  /*background-color: blue;*/
+  /*background-image: url('../img/skyscrapers.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.companies-header{
+  width: 60vw;
+
+  padding-top: 5vh;
+  padding-bottom: 3vh;
+}
+.company-profile {
+  width: 60vw;
+  height: auto;
+  position: relative;
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+  background-color: white;
+  border-radius: 10px;
+}
+.company-name {
+  position: absolute;
+  top: 20px;
+  margin-left: 10px;
+}
+.find-comp {
+  display: inline-block;
+  font-weight: 800;
+
+}
+.company-profile-image {
+  width: 80px;
+  height: auto;
+  margin-left: 2px;
+  margin-top: 3px;
+  border-radius: 10px
+}
+.company-show-more {
+  float: right;
+  margin-right: 2vw;
+  margin-top:2vh;
+
+}
+.company-description {
+  width: 80%;
+  height: auto;
+  margin-left: 90px;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.company-show-less {
+margin-left: calc(50% - (61.78px/2));
+}

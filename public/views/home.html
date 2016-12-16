@@ -1,1 +1,26 @@
-the home page is {{test}}
+<div class="home-body">
+  <form class="login-header" ng-submit="login(user)">
+    <p class="login-username">USERNAME</p><input ng-model="user.username" placeholder="Username">
+    <p class="login-password">PASSWORD</p><input ng-model="user.password" placeholder="Password">
+  </br>
+    <button class="login-button" type="submit" onclick="history.go(0)" VALUE="Refresh">login</button>
+  </form>
+
+
+  <div class="register-container">
+
+    <div class="register">
+      <div class="center-register">
+        <a class="register-user" ui-sref="newUser">NEW USER</a>
+      </div>
+    </div>
+
+    <div class="register">
+      <div class="center-register">
+        <a class="register-company" ui-sref="newCompany">NEW COMPANY</a>
+      </div>
+    </div>
+  </div>
+  <div ui-sref="points_page">Because... Points</div>
+
+</div>

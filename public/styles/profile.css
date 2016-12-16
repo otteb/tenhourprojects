@@ -1,0 +1,110 @@
+ .profile-body{
+   width: 100vw;
+   height: 100vh;
+   overflow: scroll;
+   position: relative;
+   background-color: blue;
+   /*background-image: url('../img/skyscrapers.jpg');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;*/
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+
+ .profile-info{
+   width: 60vw;
+   height: auto;
+   position: relative;
+   margin-top: 1.5vh;
+   margin-bottom: 1.5vh;
+   background-color: yellow;
+   border-radius: 10px;
+ }
+ .profile-img {
+   width: 80px;
+   height: auto;
+   display: inline-block;
+   margin-left: 2px;
+   margin-top: 3px;
+   border-radius: 10px
+ }
+ .user-name{
+   position: absolute;
+   display: inline-block;
+   top: 20px;
+   margin-left: 10px;
+ }
+ .contact{
+   float: right;
+   margin-top: 20px;
+   margin-right: 10px;
+ }
+ .profile-email{
+   width: 60vw;
+   height: auto;
+   margin-left: 10px;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ }
+ .profile-info-show-less{
+  margin-left: calc(50% - (61.78px/2));
+ }
+
+ .com-profile {
+   width: 60vw;
+   height: auto;
+   position: relative;
+   margin-top: 1.5vh;
+   margin-bottom: 1.5vh;
+   background-color: white;
+   border-radius: 10px;
+ }
+ .com-badge{
+   margin-left: 5px;
+   margin-top: 5px;
+   display: inline-block;
+ }
+ .com-category{
+   display: inline-block;
+   position: absolute;
+   top: 10px;
+   margin-left: 20px;
+ }
+ .com-proj-name{
+   display: inline-block;
+   position: absolute;
+   margin-top: 35px;
+   margin-left: 20px;
+ }
+ .com-proj-comp{
+   width: calc(60vw - 150px);
+   padding-left: 75px;
+   padding-right: 75px;
+   margin-top: 5px;
+ }
+ .com-show-more{
+   float: right;
+   margin-right: 20px;
+   margin-top: 20px;
+ }
+.com-show-less{
+  display: inline-block;
+  position: relative;
+  margin-left: calc(50% - (61.78px/2));
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.com-desc{
+  width: calc(60vw - 150px);
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 5px;
+}
+.com-comtext{
+  width: calc(60vw - 150px);
+  padding-left: 75px;
+  padding-right: 75px;
+  margin-top: 10px;
+}

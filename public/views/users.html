@@ -1,8 +1,11 @@
-the users page is {{test}}
-</br>
-</br>
-<div ng-repeat="user in users">
-  <a ui-sref="profile ({id: user.userid})">{{user.username}}<a>
-</br>
-</br>
+<div class="users-body">
+  <header class="users-header">
+    <input class="search-bar" type='text' ng-model="userSearchBox" placeholder="Search By Username">
+  </header>
+
+<div class="user-profile" ng-repeat="user in users | filter: userSearchBox">
+  <img class="users-profile-image" ng-src="{{user.profilepicurl}}" alt=profilepic/>
+  <a class="users-username" ui-sref="profile ({id: user.userid})">{{user.username}}</a>
+
+</div>
 </div>

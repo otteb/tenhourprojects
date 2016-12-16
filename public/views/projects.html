@@ -1,12 +1,13 @@
-the projects page is {{test}}
+<div class="projects-body">
+  <div class="proj-header">
+    <h3 class="find-proj">Find a project: </h3>
+    <input type='text' ng-model="projSearchBox" placeholder="Search By Project Name" style="width: 160px;">
+  </div>
 
-</br>
-</br>
+  <div class="projects-profile" ng-repeat="project in projects | filter: projSearchBox">
+    <p class="proj-cont proj-cat">{{project.category}}</h3>
+    <p class="proj-cont proj-name">{{project.projectname}}</h3>
+    <p class="proj-cont proj-desc">{{project.description}}</h3>
 
-<div ng-repeat="project in projects">
-  {{project.projectname}}
-</br>
-{{project.description}}
-</br>
-</br>
+  </div>
 </div>

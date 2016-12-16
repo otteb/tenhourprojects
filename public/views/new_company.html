@@ -1,0 +1,57 @@
+<div class="new-comp-body">
+
+  <form ng-submit="postNewCompany(company)">
+
+    <div class="input-field">
+      <p class="input-text">Company Name</p>
+      <input class="input-text" type="text" ng-model="company.companyname" placeholder="Company Name">
+    </div>
+
+    <div class="input-field">
+      <p class="input-text">Company Description</p>
+      <input class="input-text signup-desc" type="text" ng-model="company.company_description" placeholder="Company Description">
+    </div>
+
+    <div class="input-field">
+      <p class="input-text">Contact First Name</p>
+      <input class="input-text" type="text" ng-model="company.contactfirstname" placeholder="Contact's First Name">
+    </div>
+
+    <div class="input-field"
+    <p class="input-text">Contact Last Name</p>
+    <input class="input-text" type="text" ng-model="company.contactlastname" placeholder="Contact's Last Name">
+  </div>
+
+  <div class="input-field">
+    <p class="input-text">Contact Phone Number</p>
+    <input class="input-text" type="text" ng-model="company.contactphone" placeholder="Contact's Phone Number">
+  </div>
+
+  <div class="input-field">
+    <p class="input-text">Contact Email</p>
+    <input class="input-text" type="text" ng-model="company.contactemail" placeholder="Contact's Email">
+  </div>
+
+  <div class="input-field">
+    <p class="input-text">Skype Id</p>
+    <input class="input-text" type="text" ng-model="company.contactskypeid" placeholder="Contact's Skype Account">
+  </div>
+
+  <div class="input-field">
+    <p class="input-text">Password</p>
+    <input class="input-text" type="text" ng-model="company.password" placeholder="Password">
+  </div>
+
+  <div class="input-field">
+    <p class="input-text">Username</p>
+    <input class="input-text" type="text" ng-model="company.username" placeholder="Username">
+  </div>
+
+  <div class="input-field">
+    <p class="input-text">Profile Pic Url</p>
+    <input class="input-text" ng-model="company.profilepicurl" placeholder="profile pic url">
+  </div>
+</form>
+
+<button type="button" name="button" ng-click="postNewCompany(company)">Create company Profile</button>
+</div>

@@ -1,1 +1,27 @@
-the companies page is {{test}}
+<!-- the companies page is {{test}} -->
+<div class='company-wrapper'>
+
+
+  <div class="companies-body">
+
+    <header class="companies-header">
+      <h3 class="find-comp">Find a Company: </h3>
+      <input class="search-bar" type='text' ng-model="compSearchBox" size="50" placeholder="Enter a Company Name or Company Contact Information">
+    </header>
+
+
+    <!-- repeated company profiles -->
+    <div class="company-profile" ng-repeat="company in companies | filter: compSearchBox">
+      <img class="company-profile-image" ng-src="{{company.profilepicurl}}" alt=profilepic/>
+      <a class="company-name" ui-sref="company_projects ({id: company.companyid})">{{company.companyname}}</a>
+      <div ng-hide="!show">
+        <p class="company-description">{{company.company_description}}</p>
+        <a class="company-show-less" ng-click="show=!show">show less</a>
+      </div>
+      <a class="company-show-more" ng-click="show = !show" ng-hide="show">
+        show more
+      </a>
+    </div>
+    <!-- end of main body container -->
+  </div>
+</div>

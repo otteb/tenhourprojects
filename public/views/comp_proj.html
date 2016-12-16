@@ -1,0 +1,38 @@
+<secion class="comp-proj-wrapper">
+<a ui-sref="companies" ng-if="currentCompany == loggInUser.companyid"><button type="button" name="button" ng-click="deactCurrentCompany({currentCompany})">Deactivate Company Profile</button></a>
+
+
+<form ng-submit="postNewProject(project)" ng-if="currentCompany == loggInUser.companyid">
+  <h1>ADD A NEW PROJECT</h1>
+  <input type="text" ng-model="project.projectname" placeholder="Project Name">
+
+  <select ng-model="project.category" required>
+      <option value="">Category</option>
+      <option value="Computer Science">Computer Science</option>
+      <option value="Business Marketing">Business Marketing</option>
+  </select>
+
+  <input type="text" ng-model="project.description" placeholder="Project Description">
+
+  <input type="text" ng-model="project.badge_description" placeholder="Project Badge Description">
+
+  <button type="button" name="button" ng-click="postNewProject(project)">Create Project</button>
+</form>
+
+<div class="comp-proj-wrapper">
+<div class="comp-proj-profile" ng-repeat="project in projects">
+
+      <img class="comp-proj-img" ng-src="{{project.badge_imageurl}}" height="50px" width="50px"/>
+
+      <h3 class="comp-proj-category">{{project.category}}</h3>
+      <h3 class="comp-proj-proj-name">{{project.projectname}}</h3>
+
+      <a ng-click="show=!show"><p class="comp-proj-show-more">show more</p></a>
+
+<div ng-hide="!show">
+  <p class="comp-proj-desc">{{project.description}}</p>
+  <a class="comp-proj-show-less" ng-click="show=!show"><p>show less</p></a>
+</div>
+</div>
+</div>
+</section>

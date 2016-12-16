@@ -1,0 +1,34 @@
+.about-body{
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+  background-color: blue;
+  /*background-image: url('../img/skyscrapers.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-question-container{
+  width: 80vw;
+  height: 30vh;
+  background-color: white;
+  margin-bottom: 5vh;
+  border-radius: 10px;
+}
+.about-question{
+  color: blue;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+.about-answer{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}

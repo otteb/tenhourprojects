@@ -1,0 +1,26 @@
+.new-user-body{
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  position: relative;
+  background-color: blue;
+  /*background-image: url('../img/skyscrapers.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-field{
+  width: 80vw;
+  height: auto;
+  text-align: left;
+  margin-top: 20px;
+}
+.input-header{
+  display: block;
+}
+.input-text{
+  width: 200px;
+}

@@ -1,0 +1,48 @@
+<!-- the new user view is {{test}} -->
+<div class="new-user-body">
+  <h1>WELCOME TO 10HOURPROJECTS.COM!</h1>
+  <h4>Please fill out the following fields to register</h4>
+<form ng-submit="postNewUser(user)">
+      <div class="input-field">
+        <p class="input-header">First Name</p>
+        <input class="input-text" type="text" ng-model="user.firstname" placeholder="First Name">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Last Name</p>
+        <input class="input-text" type="text" ng-model="user.lastname" placeholder="Last Name">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Valid Phone Number</p>
+        <input class="input-text" type="text" ng-model="user.phone" placeholder="Contact Phone">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Enter a Valid Email Address</p>
+        <input class="input-text" type="text" ng-model="user.email" placeholder="Contact Email">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Enter a Skype Account Id</p>
+        <input class="input-text" type="text" ng-model="user.skypeid" placeholder="Skype Account Username">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Create a Password</p>
+        <input class="input-text" type="text" ng-model="user.password" placeholder="Password">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Create a Username</p>
+        <input class="input-text" type="text" ng-model="user.username" placeholder="Username">
+      </div>
+
+      <div class="input-field">
+        <p class="input-header">Pick a Profile Picture</p>
+        <input class="input-text" ng-model="user.profilepicurl" placeholder="Profile Pic Url">
+      </div>
+</form>
+
+<button type="button" name="button" ng-click="postNewUser(user)">Create User Profile</button>
+</div>
